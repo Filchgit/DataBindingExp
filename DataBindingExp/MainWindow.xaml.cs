@@ -24,5 +24,30 @@ namespace DataBindingExp
         {
             InitializeComponent();
         }
+        public string Department
+        {
+            get { return "Software Engineering"; }
+        }
+
+
+        public string PersonName
+        {
+            get { return (string)GetValue(PersonNameProperty); }
+            set { SetValue(PersonNameProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PersonName.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PersonNameProperty =
+            DependencyProperty.Register("PersonName", typeof(string), typeof(MainWindow), new PropertyMetadata(string.Empty));
+
+        private void OnSubmit(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello " + PersonName); 
+        }
+
+        private void OnReset(object sender, RoutedEventArgs e)
+        {
+            PersonName = string.Empty; 
+        }
     }
 }

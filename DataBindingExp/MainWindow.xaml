@@ -50,8 +50,8 @@
                     Margin="4" Width="80" 
                     Click="OnSubmit"/>
             <Button Content="Reset" 
-                    Margin="4" Width="80" 
-                    Click="OnReset"/>
+                    Margin="4,4,4,0" Width="80" 
+                    Click="OnReset" Height="21" VerticalAlignment="Top"/>
         </StackPanel>
 
 
